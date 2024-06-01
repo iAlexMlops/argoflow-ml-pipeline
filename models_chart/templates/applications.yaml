@@ -9,8 +9,11 @@ spec:
     namespace: argo
   sources:
     - repoURL: https://github.com/iAlexMlops/argoflow-ml-pipeline.git
-      path: iris-model
+      chart: iris-model
       targetRevision: HEAD
+      helm:
+        valueFiles:
+          - $values/.mlops/config.yaml
     - repoURL: https://github.com/iAlexMlops/awf-iris-model.git
-      path: .mlops
       targetRevision: HEAD
+      ref: values

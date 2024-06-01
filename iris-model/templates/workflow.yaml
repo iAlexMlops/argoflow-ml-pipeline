@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
-  name: spark-pi
+  name: spark-pi-{{ .Values.model_name}}
   namespace: argo
 spec:
   entrypoint: spark-submit
