@@ -1,0 +1,4 @@
+spark-operator:
+  image:
+    repository: huecker.io/kubeflow/spark-operator
+    tag: "v1beta2-1.4.6-3.5.0"
