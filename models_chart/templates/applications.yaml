@@ -9,7 +9,7 @@ spec:
     namespace: argo
   sources:
     - repoURL: https://github.com/iAlexMlops/argoflow-ml-pipeline.git
-      chart: iris-model
+      path: iris-model
       targetRevision: HEAD
       helm:
         valueFiles:
