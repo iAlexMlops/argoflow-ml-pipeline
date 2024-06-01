@@ -12,5 +12,5 @@ spec:
       path: iris-model
       targetRevision: HEAD
     - repoURL: https://github.com/iAlexMlops/awf-iris-model.git
-      path: ./mlops
+      path: .mlops
       targetRevision: HEAD
