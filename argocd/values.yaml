@@ -1,0 +1,32 @@
+argo-cd:
+  dex:
+    enabled: false
+
+  server:
+    ingress:
+      enabled: true
+      ingressClassName: "nginx"
+      hostname: "argocd.alex-localhost.ru"
+      path: /
+      pathType: Prefix
+      annotations:
+        nginx.ingress.kubernetes.io/ssl-redirect: "true"
+        nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+
+  configs:
+    cm:
+      url: https://argocd.alex-localhost.ru
+    params:
+      server.insecure: true
+      dexserver.disable.tls: true
+      server.dex.server.plaintext: true
+    repositories:
+      main-platform-repo:
+        url: https://github.com/iAlexMlops/MLPlatform.git
+        name: Main platform repository
+        type: git
+    secret:
+      argocdServerAdminPassword: "$2a$10$Vez/QiLsyjujyRQ5Og580.U2Ihh713NZMbNFyYB9FnRTIpM8WNmue"
+
+  crds:
+    install: true

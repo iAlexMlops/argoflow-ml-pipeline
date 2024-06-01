@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  name: spark-pi
+  namespace: argo
+spec:
+  entrypoint: spark-submit
+  templates:
+    - name: spark-submit
+      steps:
+        - - name: call-spark-main-template
+            templateRef:
+              name: cluster-workflow-main-template
+              template: spark-submit
+              clusterScope: true

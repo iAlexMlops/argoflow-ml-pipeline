@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: iris-model
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argo
+  sources:
+    - repoURL: https://github.com/iAlexMlops/argoflow-ml-pipeline.git
+      path: iris-model
+      targetRevision: HEAD
+    - repoURL: https://github.com/iAlexMlops/awf-iris-model.git
+      path: ./mlops
+      targetRevision: HEAD
