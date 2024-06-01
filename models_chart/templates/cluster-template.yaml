@@ -14,7 +14,7 @@ spec:
           kind: SparkApplication
           metadata:
             name: spark-pi
-            namespace: default
+            namespace: argo
           spec:
             type: Scala
             mode: cluster
