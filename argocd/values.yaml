@@ -22,7 +22,7 @@ argo-cd:
       server.dex.server.plaintext: true
     repositories:
       main-platform-repo:
-        url: https://github.com/iAlexMlops/MLPlatform.git
+        url: https://github.com/iAlexMlops/argoflow-ml-pipeline.git
         name: Main platform repository
         type: git
     secret:
